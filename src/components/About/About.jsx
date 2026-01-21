@@ -79,7 +79,7 @@ const About = () => {
             variants={item}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            href="https://drive.google.com/file/d/15NyHHbN-gEQuMISTbKhEBOOAjDDbGVy0/view?usp=sharing"
+            href="https://drive.google.com/file/d/1RF_ABWMbFuw8UAMARefcK-tjOmmwRqV7/view?usp=drivesdk"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-white py-3 px-8 rounded-full mt-5 text-lg font-bold"
