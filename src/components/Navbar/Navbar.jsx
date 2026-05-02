@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
@@ -77,7 +77,7 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-4">
           {[ 
             {
-              href: "https://www.linkedin.com/in/sunil-vishwakarma-a20923284",
+              href: "https://www.linkedin.com/in/sunil-vishwakarma-a20923284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
               icon: <FaLinkedin size={24} />,
               label: "LinkedIn",
             },

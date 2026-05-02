@@ -1,4 +1,3 @@
-import React from "react";
 import ReactTypingEffect from "react-typing-effect";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
@@ -43,7 +42,7 @@ const About = () => {
             variants={item}
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4"
           >
-            Sunil Vishwakarma
+            Sunil Vishwakarma 
           </motion.h2>
 
           <motion.h3
@@ -52,7 +51,7 @@ const About = () => {
           >
             <span className="text-white">I am a </span>
             <ReactTypingEffect
-              text={["UI/UX Designer", "& Creative Designer"]}
+              text={["UI/UX Designer"]}
               speed={100}
               eraseSpeed={50}
               typingDelay={500}

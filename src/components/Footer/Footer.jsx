@@ -1,6 +1,4 @@
-import React from "react";
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube, FaGithub, FaCode, FaWhatsapp, FaPhone, FaPhoneVolume } from "react-icons/fa";
-import { FaPhoneFlip } from "react-icons/fa6";
+import { FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   // Smooth scroll function

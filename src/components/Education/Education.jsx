@@ -1,80 +1,87 @@
-import React from "react";
-import { education } from "../../constants"; // Import the education data
+import { education } from "../../constants";
+
+// Icons
+const collegeIcon = "https://cdn-icons-png.flaticon.com/512/3135/3135755.png";
+const schoolIcon = "https://cdn-icons-png.flaticon.com/512/3135/3135789.png";
+
+const getEducationIcon = (degree) => {
+  const text = degree.toLowerCase();
+
+  if (
+    text.includes("bachelor") ||
+    text.includes("degree") ||
+    text.includes("b.a") ||
+    text.includes("bsc")
+  ) {
+    return collegeIcon;
+  }
+
+  return schoolIcon;
+};
 
 const Education = () => {
   return (
     <section
       id="education"
-      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-3"
+      className="py-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-gradient-to-b from-[#050414] to-[#0a061f]"
     >
-      {/* Section Title */}
-      <div className="text-center mb-16">
+      {/* Title */}
+      <div className="text-center mb-20">
         <h2 className="text-4xl font-bold text-white">EDUCATION</h2>
-        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-gray-400 mt-4 text-lg font-semibold">
-          My education has been a journey of learning and development. Here are the details of my academic background
+        <div className="w-32 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-4 rounded-full"></div>
+        <p className="text-gray-400 mt-4 text-lg">
+          My academic journey and qualifications
         </p>
       </div>
 
-      {/* Education Timeline */}
-      <div className="relative">
-        {/* Vertical line */}
-        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-white h-full"></div>
+      {/* Cards */}
+      <div className="flex flex-col gap-12 items-center">
 
-        {/* Education Entries */}
-        {education.map((edu, index) => (
+        {education.map((edu) => (
           <div
             key={edu.id}
-            className={`flex flex-col sm:flex-row items-center mb-16 ${
-              index % 2 === 0 ? "sm:justify-start" : "sm:justify-end"
-            }`}
+            className="w-full max-w-3xl p-[2px] rounded-2xl bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500 hover:scale-105 transition duration-300"
           >
-            {/* Timeline Circle */}
-            {/* <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 bg-gray-400 border-4 border-[#8245ec] w-12 h-12 sm:w-16 sm:h-16 rounded-full flex justify-center items-center z-10">
-              <img
-                src={edu.img}
-                alt={edu.school}
-                className="w-full h-full object-cover rounded-full"
-              />
-            </div> */}
+            {/* Glass Card */}
+            <div className="bg-[#0b0a1a]/80 backdrop-blur-xl rounded-2xl p-6 flex items-center gap-6">
 
-            {/* Content Section */}
-            <div
-              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border border-white bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
-                index % 2 === 0 ? "sm:ml-0" : "sm:mr-0"
-              } sm:ml-44 sm:mr-44 ml-8 transform transition-transform duration-300 hover:scale-105`}
-            >
-              {/* Flex container for image and text */}
-              <div className="flex items-center space-x-6">
-                {/* School Logo/Image */}
-                <div className="w-24 h-16 bg-white rounded-md overflow-hidden">
-                  <img
-                    src={edu.img}
-                    alt={edu.school}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Degree, School Name, and Date */}
-                <div className="flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-xl sm:text-xl font-semibold text-white">
-                      {edu.degree}
-                    </h3>
-                    <h4 className="text-md sm:text-sm text-gray-300">
-                      {edu.school}
-                    </h4>
-                  </div>
-                  {/* Date at the bottom */}
-                  <p className="text-sm text-gray-500 mt-2">{edu.date}</p>
-                </div>
+              {/* Icon */}
+              <div className="w-20 h-16 bg-white/10 rounded-xl flex items-center justify-center backdrop-blur-md">
+                <img
+                  src={edu.img || getEducationIcon(edu.degree)}
+                  alt={edu.school}
+                  className="w-12 h-12 object-contain"
+                />
               </div>
 
-              <p className="mt-4 text-gray-400 font-bold">Grade: {edu.grade}</p>
-              <p className="mt-4 text-gray-400">{edu.desc}</p>
+              {/* Text */}
+              <div>
+                <h3 className="text-xl font-semibold text-white">
+                  {edu.degree}
+                </h3>
+                <h4 className="text-sm text-gray-300">
+                  {edu.school}
+                </h4>
+                <p className="text-sm text-gray-500 mt-1">
+                  {edu.date}
+                </p>
+
+                {edu.grade && (
+                  <p className="text-sm text-gray-400 mt-2">
+                    <span className="font-semibold">Grade:</span> {edu.grade}
+                  </p>
+                )}
+
+                {edu.desc && (
+                  <p className="text-sm text-gray-400 mt-1">
+                    {edu.desc}
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         ))}
+
       </div>
     </section>
   );
