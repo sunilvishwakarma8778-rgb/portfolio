@@ -88,7 +88,7 @@ const Contact = () => {
         />
 
         <ContactIcon
-          href="https://www.linkedin.com"
+          href="https://www.linkedin.com/in/sunil-vishwakarma-a20923284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
           gradient="from-blue-600 to-sky-500"
           shadow="shadow-blue-500/40"
           icon={<FaLinkedinIn />}
